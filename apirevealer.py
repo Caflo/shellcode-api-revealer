@@ -39,11 +39,8 @@ def find_api(addr):
 	for index, tuple in enumerate(hashes):
 		apihash = tuple[0]
 		apiname = tuple[1]
-		#print(int(addr, base=16))
 		addr_int = int(addr, base=16)
-		#print(apihash)
 		if addr_int == apihash:
-			#print(f'{addr} ({apiname})')
 			result = f'{addr} ({apiname})'
 			return result
 	return result
@@ -63,7 +60,6 @@ if __name__ == '__main__':
 		for a in args:
 			if pattern.match(a):
 				api = find_api(a)
-				#print(api)
-				format_string = "0x%x:\t%s\t%s //%s" %(i.address, i.mnemonic, i.op_str, api)
-	#			print("0x%x:\t%s\t%s" %(i.address, i.mnemonic, i.op_str) + " //ciao")
+				if api:
+					format_string = "0x%x:\t%s\t%s //%s" %(i.address, i.mnemonic, i.op_str, api)
 		print(format_string)

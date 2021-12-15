@@ -1,5 +1,5 @@
 # shellcode-api-revealer
- Fast tool to get instanly API names from hashes.
+ Fast tool to get instanly common API names from hashes used by the shellcode.
 
 # usage
 `
